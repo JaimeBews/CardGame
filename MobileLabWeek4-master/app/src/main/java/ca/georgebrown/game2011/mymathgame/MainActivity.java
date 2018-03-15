@@ -77,7 +77,7 @@ public class MainActivity extends Activity {
     }
 
     private void startPlay() {
-        Intent intentInstance = new Intent(this, BugSmashActivity.class);
+        Intent intentInstance = new Intent(getApplicationContext(), PlayActivity.class);
         startActivity(intentInstance);
     }
 

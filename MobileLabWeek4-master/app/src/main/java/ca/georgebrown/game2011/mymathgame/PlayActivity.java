@@ -27,20 +27,74 @@ public class PlayActivity extends Activity {
     private Canvas gameCanvas;
     private Bitmap gameBitmap;
     private ImageView gameFrame;
-    private Rectangle rectangle;
-
     public ImageButton[] cards;
-    private Bitmap[]    cardBitmaps;
-    private Bitmap[]    selectedBitmaps;
+  //  private Bitmap[]    cardBitmaps;
+  //  private Bitmap[]    selectedBitmaps;
     private int firstType;
     private int secondType;
     private int thirdType;
     private int fourthType;
 
-    Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(),R.drawable.);//assign your bitmap;
-    Bitmap bitmap2 = BitmapFactory.decodeResource(getResources(),R.drawable.);//assign your bitmap;
-    Bitmap[] arrayOfBitmap = {bitmap1, bitmap2};
-    int[] faceDownMemory;
+    Bitmap bitmap1 ;
+    Bitmap bitmap2;
+    Bitmap bitmap3;
+  /*  Bitmap bitmap4;
+    Bitmap bitmap5 ;
+    Bitmap bitmap6 ;
+    Bitmap bitmap7 ;
+    Bitmap bitmap8;
+    Bitmap bitmap9 ;
+
+    Bitmap bitmap10 ;
+    Bitmap bitmap11 ;
+    Bitmap bitmap12;
+    Bitmap bitmap13;
+    Bitmap bitmap14 ;
+    Bitmap bitmap15 ;
+    Bitmap bitmap16 ;
+    Bitmap bitmap17;
+    Bitmap bitmap18 ;
+    Bitmap bitmap19 ;
+    Bitmap bitmap20 ;
+    Bitmap bitmap21;
+    Bitmap bitmap22 ;
+    Bitmap bitmap23 ;
+    Bitmap bitmap24 ;
+    Bitmap bitmap25;
+    Bitmap bitmap26;
+    Bitmap bitmap27;
+    Bitmap bitmap28;
+    Bitmap bitmap29 ;
+    Bitmap bitmap30 ;
+    Bitmap bitmap31 ;
+    Bitmap bitmap32 ;
+    Bitmap bitmap33 ;
+    Bitmap bitmap34;
+    Bitmap bitmap35 ;
+    Bitmap bitmap36 ;
+    Bitmap bitmap37 ;
+    Bitmap bitmap38 ;
+    Bitmap bitmap39 ;
+    Bitmap bitmap40;
+    Bitmap bitmap41 ;
+    Bitmap bitmap42;
+    Bitmap bitmap43 ;
+    Bitmap bitmap44 ;
+    Bitmap bitmap45;
+    Bitmap bitmap46;
+    Bitmap bitmap47;
+    Bitmap bitmap48;
+
+    Bitmap bitmap49;
+    Bitmap bitmap50;
+    Bitmap bitmap51;
+    Bitmap bitmap52;
+    */
+  //  Bitmap bitmap53 = BitmapFactory.decodeResource(getResources(),R.drawable.bug);
+
+    //assign your bitmap;
+   // Bitmap[] arrayOfBitmap = {bitmap1, bitmap2, bitmap3, bitmap4, bitmap5, bitmap6, bitmap7, bitmap8, bitmap9, bitmap10, bitmap11, bitmap12, bitmap13, bitmap14, bitmap15, bitmap16, bitmap17, bitmap18, bitmap19, bitmap20, bitmap21, bitmap22, bitmap23, bitmap24, bitmap25, bitmap26, bitmap27, bitmap28, bitmap29, bitmap30, bitmap31, bitmap32, bitmap33, bitmap34, bitmap35, bitmap36, bitmap37, bitmap38, bitmap39, bitmap40, bitmap41, bitmap42, bitmap43, bitmap44, bitmap45, bitmap46, bitmap47, bitmap48, bitmap49, bitmap50, bitmap51, bitmap52,};
+   /* int[] faceDownMemory;
     public void setRandCards() {
         for(int i=0;i<4;i++) {
             int rnd = (int) Math.floor(Math.random() * arrayOfBitmap.length);
@@ -58,13 +112,13 @@ public class PlayActivity extends Activity {
     public void flipCards(){
 
     }
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
 
-        gameFrame = findViewById(R.id.canvasImageView);
+        gameFrame = (ImageView) findViewById(R.id.canvasImageView);
         WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         DisplayMetrics metrics = new DisplayMetrics();
@@ -77,148 +131,117 @@ public class PlayActivity extends Activity {
 
         gameCanvas.drawColor(Color.BLACK);
 
-        paint = new Paint();
-        paint.setColor(Color.WHITE);
-        paint.setTextSize(50);
-        gameCanvas.drawText("Score:42 Lives:3 Hi:97", 50, 100, paint);
+         bitmap1 = BitmapFactory.decodeResource(getResources(),R.drawable.cardone);//assign your bitmap;
+       //  bitmap2 = BitmapFactory.decodeResource(getResources(),R.drawable.card2);
+       //  bitmap3 = BitmapFactory.decodeResource(getResources(),R.drawable.card3);
 
-        gameFrame.setImageBitmap(gameBitmap);
+        /* bitmap4 = BitmapFactory.decodeResource(getResources(),R.drawable.card4);
+         bitmap5 = BitmapFactory.decodeResource(getResources(),R.drawable.card5);
+         bitmap6 = BitmapFactory.decodeResource(getResources(),R.drawable.card6);
+         bitmap7 = BitmapFactory.decodeResource(getResources(),R.drawable.card7);
+         bitmap8 = BitmapFactory.decodeResource(getResources(),R.drawable.card8);
+         bitmap9 = BitmapFactory.decodeResource(getResources(),R.drawable.card9);
 
-        Point newTopLeft = new Point(250,250);
-        Point newBottomRight = new Point(500,400);
-        rectangle = new Rectangle(newTopLeft, newBottomRight);
+         bitmap10 = BitmapFactory.decodeResource(getResources(),R.drawable.card10);
+         bitmap11 = BitmapFactory.decodeResource(getResources(),R.drawable.card11);
+         bitmap12 = BitmapFactory.decodeResource(getResources(),R.drawable.card12);
+         bitmap14 = BitmapFactory.decodeResource(getResources(),R.drawable.card14);
+         bitmap15 = BitmapFactory.decodeResource(getResources(),R.drawable.card15);
+         bitmap16 = BitmapFactory.decodeResource(getResources(),R.drawable.card16);
+         bitmap17 = BitmapFactory.decodeResource(getResources(),R.drawable.card17);
+         bitmap18 = BitmapFactory.decodeResource(getResources(),R.drawable.card18);
+         bitmap19 = BitmapFactory.decodeResource(getResources(),R.drawable.card19);
+         bitmap20 = BitmapFactory.decodeResource(getResources(),R.drawable.card20);
+         bitmap21 = BitmapFactory.decodeResource(getResources(),R.drawable.card21);
+         bitmap22 = BitmapFactory.decodeResource(getResources(),R.drawable.card22);
+         bitmap23 = BitmapFactory.decodeResource(getResources(),R.drawable.card23);
+         bitmap24 = BitmapFactory.decodeResource(getResources(),R.drawable.card24);
+         bitmap25 = BitmapFactory.decodeResource(getResources(),R.drawable.card25);
+         bitmap26 = BitmapFactory.decodeResource(getResources(),R.drawable.card26);
+         bitmap27 = BitmapFactory.decodeResource(getResources(),R.drawable.card27);
+         bitmap28 = BitmapFactory.decodeResource(getResources(),R.drawable.card28);
+         bitmap29 = BitmapFactory.decodeResource(getResources(),R.drawable.card29);
+         bitmap30 = BitmapFactory.decodeResource(getResources(),R.drawable.card30);
+         bitmap31 = BitmapFactory.decodeResource(getResources(),R.drawable.card31);
+         bitmap32 = BitmapFactory.decodeResource(getResources(),R.drawable.card32);
+         bitmap33 = BitmapFactory.decodeResource(getResources(),R.drawable.card33);
+         bitmap34 = BitmapFactory.decodeResource(getResources(),R.drawable.card34);
+         bitmap35 = BitmapFactory.decodeResource(getResources(),R.drawable.card35);
+         bitmap36 = BitmapFactory.decodeResource(getResources(),R.drawable.card36);
+         bitmap37 = BitmapFactory.decodeResource(getResources(),R.drawable.card37);
+         bitmap38 = BitmapFactory.decodeResource(getResources(),R.drawable.card38);
+         bitmap39 = BitmapFactory.decodeResource(getResources(),R.drawable.card39);
+         bitmap40 = BitmapFactory.decodeResource(getResources(),R.drawable.card40);
+         bitmap41 = BitmapFactory.decodeResource(getResources(),R.drawable.card41);
+         bitmap42 = BitmapFactory.decodeResource(getResources(),R.drawable.card42);
+         bitmap43 = BitmapFactory.decodeResource(getResources(),R.drawable.card43);
+         bitmap44 = BitmapFactory.decodeResource(getResources(),R.drawable.card44);
+         bitmap45 = BitmapFactory.decodeResource(getResources(),R.drawable.card45);
+         bitmap46 = BitmapFactory.decodeResource(getResources(),R.drawable.card46);
+         bitmap47 = BitmapFactory.decodeResource(getResources(),R.drawable.card47);
+         bitmap48 = BitmapFactory.decodeResource(getResources(),R.drawable.card48);
 
-        drawRectangle(rectangle, "DRAW");
+         bitmap49 = BitmapFactory.decodeResource(getResources(),R.drawable.card49);
+         bitmap50 = BitmapFactory.decodeResource(getResources(),R.drawable.card50);
+         bitmap51 = BitmapFactory.decodeResource(getResources(),R.drawable.card51);
+         bitmap52 = BitmapFactory.decodeResource(getResources(),R.drawable.card52);
+*/
 
+      //  paint = new Paint();
+      //  paint.setColor(Color.WHITE);
+       // paint.setTextSize(50);
 
+       // gameFrame.setImageBitmap(gameBitmap);
 
-        ImageButton card1But = (ImageButton) findViewById(R.id.);
-        card1listner card1listVar = new card1listner();
-        card1But.setOnClickListener(card1listVar);
+       // ImageButton card1But = (ImageButton) findViewById(R.id.Card1);
+       // card1listner card1listVar = new card1listner();
+       // card1But.setOnClickListener(card1listVar);
 
-        ImageButton card2But = (ImageButton) findViewById(R.id.);
+        /*ImageButton card2But = (ImageButton) findViewById(R.id.Card2);
         card2listner card2listVar = new card2listner();
         card2But.setOnClickListener(card2listVar);
 
-        ImageButton card3But = (ImageButton) findViewById(R.id.);
+        ImageButton card3But = (ImageButton) findViewById(R.id.Card3);
         card3listner card3listVar = new card3listner();
         card3But.setOnClickListener(card1listVar);
 
-        ImageButton card4But = (ImageButton) findViewById(R.id.);
+        ImageButton card4But = (ImageButton) findViewById(R.id.Card4);
         card4listner card4listVar = new card4listner();
         card4But.setOnClickListener(card4listVar);
 
-        ImageButton card5But = (ImageButton) findViewById(R.id.);
+        ImageButton card5But = (ImageButton) findViewById(R.id.Card5);
         card5listner card5listVar = new card5listner();
         card5But.setOnClickListener(card5listVar);
 
-        ImageButton card6But = (ImageButton) findViewById(R.id.);
+        ImageButton card6But = (ImageButton) findViewById(R.id.Card6);
         card6listner card6listVar = new card6listner();
         card6But.setOnClickListener(card6listVar);
 
-        ImageButton card7But = (ImageButton) findViewById(R.id.);
+        ImageButton card7But = (ImageButton) findViewById(R.id.Card7);
         card7listner card7listVar = new card7listner();
         card7But.setOnClickListener(card7listVar);
 
-        ImageButton card8But = (ImageButton) findViewById(R.id.);
+        ImageButton card8But = (ImageButton) findViewById(R.id.Card8);
         card8listner card8listVar = new card8listner();
         card8But.setOnClickListener(card8listVar);
 
-        ImageButton card9But = (ImageButton) findViewById(R.id.);
+        ImageButton card9But = (ImageButton) findViewById(R.id.Card9);
         card9listner card9listVar = new card9listner();
-        card9But.setOnClickListener(card9listVar);
+        card9But.setOnClickListener(card9listVar);*/
     }
-    private void card1() {
-        cards[0].setImageBitmap(selectedBitmaps[faceDownMemory[0]] );
-    }
+   // private void card1() {
+    //    cards[0].setImageBitmap(selectedBitmaps[faceDownMemory[0]] );
+   // }
 
-    private class card1listner implements View.OnClickListener {
-        @Override
-        public void onClick(View view) {
-            card1();
-        }
-    }
-    private void card2() {
-        cards[1].setImageBitmap(selectedBitmaps[faceDownMemory[1]] );
-    }
+   // private class card1listner implements View.OnClickListener {
+   //     @Override
+   //     public void onClick(View view) {
+   //         card1();
+   //     }
+   // }
 
-    private class card2listner implements View.OnClickListener {
-        @Override
-        public void onClick(View view) {
-            card2();
-        }
-    }
-    private void card3() {
-        cards[2].setImageBitmap(selectedBitmaps[faceDownMemory[2]] );
-    }
 
-    private class card3listner implements View.OnClickListener {
-        @Override
-        public void onClick(View view) {
-            card3();
-        }
-    }
-    private void card4() {
-        cards[3].setImageBitmap(selectedBitmaps[faceDownMemory[3]] );
-    }
-
-    private class card4listner implements View.OnClickListener {
-        @Override
-        public void onClick(View view) {
-            card4();
-        }
-    }
-    private void card5() {
-        cards[4].setImageBitmap(selectedBitmaps[faceDownMemory[4]] );
-    }
-
-    private class card5listner implements View.OnClickListener {
-        @Override
-        public void onClick(View view) {
-            card5();
-        }
-    }
-    private void card6() {
-        cards[5].setImageBitmap(selectedBitmaps[faceDownMemory[5]] );
-    }
-
-    private class card6listner implements View.OnClickListener {
-        @Override
-        public void onClick(View view) {
-            card6();
-        }
-    }
-    private void card7() {
-        cards[6].setImageBitmap(selectedBitmaps[faceDownMemory[6]] );
-    }
-
-    private class card7listner implements View.OnClickListener {
-        @Override
-        public void onClick(View view) {
-            card7();
-        }
-    }
-    private void card8() {
-        cards[7].setImageBitmap(selectedBitmaps[faceDownMemory[7]] );
-    }
-
-    private class card8listner implements View.OnClickListener {
-        @Override
-        public void onClick(View view) {
-            card8();
-        }
-    }
-    private void card9() {
-        cards[8].setImageBitmap(selectedBitmaps[faceDownMemory[8]] );
-    }
-
-    private class card9listner implements View.OnClickListener {
-        @Override
-        public void onClick(View view) {
-            card9();
-        }
-    }
-
+/*
     private void addMatch(int curr){
         if(curr==0){
             firstType++;
@@ -235,44 +258,14 @@ public class PlayActivity extends Activity {
     }
     private void checkMatch(){
         if(firstType==2||secondType==2||thirdType==2||fourthType==2)
-            int i=0;
+            paint.setColor(Color.WHITE);
         else
             resetCards();
     }
     void resetCards(){
         for(int i=0; i<cards.length; i++)
-          cards[i].setImageBitmap();
+          cards[i].setImageBitmap(bitmap53);
 
     }
-    private void drawRectangle(Rectangle rectangle, String action) {
-        if (action.equals("DRAW")) {
-            paint.setColor(Color.WHITE);
-        }
-        else // ERASE
-        {
-            paint.setColor(Color.BLACK);
-        }
-
-        int rectLeft = rectangle.getTopLeft().getX();
-        int rectTop = rectangle.getTopLeft().getY();
-        int rectRight = rectangle.getBottomRight().getX();
-        int rectBottom = rectangle.getBottomRight().getY();
-
-        Rect rectToDraw = new Rect(rectLeft, rectTop, rectRight, rectBottom);
-        gameCanvas.drawRect(rectToDraw, paint);
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        float touchX = event.getX();
-        float touchY = event.getY();
-
-        drawRectangle(rectangle, "ERASE");
-        rectangle.translate(new Point((int)touchX, (int)touchY));
-        drawRectangle(rectangle, "DRAW");
-
-        gameFrame.invalidate();
-
-        return super.onTouchEvent(event);
-    }
+*/
 }
