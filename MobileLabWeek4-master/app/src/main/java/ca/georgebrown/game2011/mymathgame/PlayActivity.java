@@ -18,6 +18,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -38,7 +39,7 @@ public class PlayActivity extends Activity {
     Bitmap bitmap1 ;
     Bitmap bitmap2;
     Bitmap bitmap3;
-  /*  Bitmap bitmap4;
+   Bitmap bitmap4;
     Bitmap bitmap5 ;
     Bitmap bitmap6 ;
     Bitmap bitmap7 ;
@@ -89,7 +90,7 @@ public class PlayActivity extends Activity {
     Bitmap bitmap50;
     Bitmap bitmap51;
     Bitmap bitmap52;
-    */
+
   //  Bitmap bitmap53 = BitmapFactory.decodeResource(getResources(),R.drawable.bug);
 
     //assign your bitmap;
@@ -131,9 +132,9 @@ public class PlayActivity extends Activity {
 
         gameCanvas.drawColor(Color.BLACK);
 
-         bitmap1 = BitmapFactory.decodeResource(getResources(),R.drawable.cardone);//assign your bitmap;
-       //  bitmap2 = BitmapFactory.decodeResource(getResources(),R.drawable.card2);
-       //  bitmap3 = BitmapFactory.decodeResource(getResources(),R.drawable.card3);
+        bitmap1 = BitmapFactory.decodeResource(getResources(), R.drawable.cardone);//assign your bitmap;
+        //  bitmap2 = BitmapFactory.decodeResource(getResources(),R.drawable.card2);
+        //  bitmap3 = BitmapFactory.decodeResource(getResources(),R.drawable.card3);
 
         /* bitmap4 = BitmapFactory.decodeResource(getResources(),R.drawable.card4);
          bitmap5 = BitmapFactory.decodeResource(getResources(),R.drawable.card5);
@@ -187,59 +188,43 @@ public class PlayActivity extends Activity {
          bitmap52 = BitmapFactory.decodeResource(getResources(),R.drawable.card52);
 */
 
-      //  paint = new Paint();
-      //  paint.setColor(Color.WHITE);
-       // paint.setTextSize(50);
-
-       // gameFrame.setImageBitmap(gameBitmap);
-
-       // ImageButton card1But = (ImageButton) findViewById(R.id.Card1);
-       // card1listner card1listVar = new card1listner();
-       // card1But.setOnClickListener(card1listVar);
-
-        /*ImageButton card2But = (ImageButton) findViewById(R.id.Card2);
-        card2listner card2listVar = new card2listner();
-        card2But.setOnClickListener(card2listVar);
-
-        ImageButton card3But = (ImageButton) findViewById(R.id.Card3);
-        card3listner card3listVar = new card3listner();
-        card3But.setOnClickListener(card1listVar);
-
-        ImageButton card4But = (ImageButton) findViewById(R.id.Card4);
-        card4listner card4listVar = new card4listner();
-        card4But.setOnClickListener(card4listVar);
-
-        ImageButton card5But = (ImageButton) findViewById(R.id.Card5);
-        card5listner card5listVar = new card5listner();
-        card5But.setOnClickListener(card5listVar);
-
-        ImageButton card6But = (ImageButton) findViewById(R.id.Card6);
-        card6listner card6listVar = new card6listner();
-        card6But.setOnClickListener(card6listVar);
-
-        ImageButton card7But = (ImageButton) findViewById(R.id.Card7);
-        card7listner card7listVar = new card7listner();
-        card7But.setOnClickListener(card7listVar);
-
-        ImageButton card8But = (ImageButton) findViewById(R.id.Card8);
-        card8listner card8listVar = new card8listner();
-        card8But.setOnClickListener(card8listVar);
-
-        ImageButton card9But = (ImageButton) findViewById(R.id.Card9);
-        card9listner card9listVar = new card9listner();
-        card9But.setOnClickListener(card9listVar);*/
+        paint = new Paint();
+        paint.setColor(Color.WHITE);
+        paint.setTextSize(50);
     }
-   // private void card1() {
-    //    cards[0].setImageBitmap(selectedBitmaps[faceDownMemory[0]] );
-   // }
+   public void ButtonOnClick(View v) {
+       switch (v.getId()) {
+           case R.id.Card1:
+               Toast.makeText(this, "Im 1", Toast.LENGTH_LONG).show();
+               break;
+           case R.id.Card2:
+               Toast.makeText(this, "Im 2", Toast.LENGTH_LONG).show();
+               break;
+           case R.id.Card3:
+               Toast.makeText(this, "Im 3", Toast.LENGTH_LONG).show();
+               break;
+           case R.id.Card4:
+               Toast.makeText(this, "Im 4", Toast.LENGTH_LONG).show();
+               break;
+           case R.id.Card5:
+               Toast.makeText(this, "Im 5", Toast.LENGTH_LONG).show();
+               break;
+           case R.id.Card6:
+               Toast.makeText(this, "Im 6", Toast.LENGTH_LONG).show();
+               break;
+           case R.id.Card7:
+               Toast.makeText(this, "Im 7", Toast.LENGTH_LONG).show();
+               break;
+           case R.id.Card8:
+               Toast.makeText(this, "Im 8", Toast.LENGTH_LONG).show();
+               break;
 
-   // private class card1listner implements View.OnClickListener {
-   //     @Override
-   //     public void onClick(View view) {
-   //         card1();
-   //     }
-   // }
+           case R.id.Card9:
+               Toast.makeText(this, "Im 9", Toast.LENGTH_LONG).show();
+               break;
 
+       }
+   }
 
 /*
     private void addMatch(int curr){
