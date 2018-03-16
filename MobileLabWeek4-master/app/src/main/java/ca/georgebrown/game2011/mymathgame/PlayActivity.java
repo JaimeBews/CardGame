@@ -9,6 +9,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
@@ -18,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
+import java.util.Timer;
 
 public class PlayActivity extends Activity {
 
@@ -26,13 +29,12 @@ public class PlayActivity extends Activity {
     private Bitmap gameBitmap;
     private ImageView gameFrame;
     private TextView scoreText;
+    private TextView timeText;
+    private TextView matchedText;
     public ImageButton[] cards;
     public Bitmap[]    cardBitmaps;
     public Bitmap[]    selectedBitmaps;
-    public int firstType;
-    private int secondType;
-    private int thirdType;
-    private int fourthType;
+    private int timeRemaining=20;
 
     Bitmap bitmap1 ;
     Bitmap bitmap2;
@@ -207,41 +209,83 @@ public class PlayActivity extends Activity {
         paint.setTextSize(50);
         scoreText = (TextView) findViewById(R.id.score);
         scoreText.setTextColor(Color.RED);
+        timeText = (TextView)findViewById(R.id.timerText);
+        matchedText=(TextView)findViewById(R.id.matchText);
+        matchedText.setVisibility(View.INVISIBLE);
         setRandCards();
+        new CountDownTimer(21000, 1000) {
+            public void onFinish( ) {
 
+                cancel();
+            }
+
+            public void onTick(long millisUntilFinished) {
+                if( timeRemaining>0) {
+                    timeRemaining--;
+                    timeText.setText(Integer.toString(timeRemaining));
+                }
+            }
+        }.start();
 
 
     }
+
     int Score=0;
     private void checkMatch(ImageButton checkCard){
         Bitmap bitmap113 = ((BitmapDrawable)checkCard.getDrawable()).getBitmap();
         Bitmap bitmap111 = ((BitmapDrawable)currCard.getDrawable()).getBitmap();
 
 
-        if(((BitmapDrawable)checkCard.getDrawable()).getBitmap()==((BitmapDrawable)currCard.getDrawable()).getBitmap()){
+
+        if(((BitmapDrawable)checkCard.getDrawable()).getBitmap()==((BitmapDrawable)currCard.getDrawable()).getBitmap()&&currCard!=checkCard){
             Score++;
             scoreText.setText(Integer.toString(Score));
+            matchedText.setVisibility(View.VISIBLE);
+            new CountDownTimer(1000, 1000) {
+                public void onFinish( ) {
+                matchedText.setVisibility(View.INVISIBLE);
+                 cancel();
+                }
+
+                public void onTick(long millisUntilFinished) {
+
+
+                }
+            }.start();
             checkCard.setVisibility(View.INVISIBLE);
             currCard.setVisibility(View.INVISIBLE);
         }
 
     }
 
-private void butClickHelper(int i){
-    if(clickedCards==false)
+private void butClickHelper(final int i){
+    if(clickedCards==0)
     {
-        clickedCards=true;
+        clickedCards++;
         cards[i].setImageBitmap(selectedBitmaps[i]);
         currCard=cards[i];
-    }else
+    }else if(clickedCards==1)
     {
+        clickedCards ++;
         cards[i].setImageBitmap(selectedBitmaps[i]);
-        checkMatch(cards[i]);
-        clickedCards = false;
-        flipCards();
+       new CountDownTimer(1000, 1000) {
+            public void onFinish( ) {
+                checkMatch(cards[i]);
+                flipCards();
+                clickedCards =0;
+                cancel();
+            }
+
+            public void onTick(long millisUntilFinished) {
+                // millisUntilFinished    The amount of time until finished.
+            }
+        }.start();
+
+
     }
 }
-    boolean clickedCards;
+
+    int clickedCards=0;
     ImageButton currCard;
    public void ButtonOnClick(View v) {
        switch (v.getId()) {
