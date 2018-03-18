@@ -35,7 +35,7 @@ public class PlayActivity extends Activity {
     public Bitmap[]    cardBitmaps;
     public Bitmap[]    selectedBitmaps;
     private int timeRemaining=20;
-
+// declares the bitmap
     Bitmap bitmap1 ;
     Bitmap bitmap2;
     Bitmap bitmap3;
@@ -93,7 +93,7 @@ public class PlayActivity extends Activity {
 
    // Bitmap bitmap53 = BitmapFactory.decodeResource(getResources(),R.drawable.bug);
     Bitmap[] arrayOfBitmap;
-
+//randomizes the cards
     public void setRandCards() {
         shuffleArray(arrayOfBitmap);
         for(int i=0;i<5;i++) {
@@ -102,11 +102,12 @@ public class PlayActivity extends Activity {
         }
         shuffleArray(selectedBitmaps);
     }
-
+//flips the cards over
     public void flipCards(){
         for(int i=0;i< cards.length;i++ )
             cards[i].setImageBitmap(bitmap1);
     }
+    //shuffles cards
     private static void shuffleArray(Bitmap[] array)
     {
         int index;
@@ -121,6 +122,7 @@ public class PlayActivity extends Activity {
         }
     }
     @Override
+    //sets up screen when begins
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
@@ -137,60 +139,60 @@ public class PlayActivity extends Activity {
         gameCanvas = new Canvas(gameBitmap);
 
         gameCanvas.drawColor(Color.BLACK);
-
-         bitmap1 = BitmapFactory.decodeResource(getResources(),R.drawable.carda);//assign your bitmap;
-         bitmap2 = BitmapFactory.decodeResource(getResources(),R.drawable.cardb);
-         bitmap3 = BitmapFactory.decodeResource(getResources(),R.drawable.cardc);
-         bitmap4 = BitmapFactory.decodeResource(getResources(),R.drawable.cardd);
-         bitmap5 = BitmapFactory.decodeResource(getResources(),R.drawable.carde);
-         bitmap6 = BitmapFactory.decodeResource(getResources(),R.drawable.cardf);
-         bitmap7 = BitmapFactory.decodeResource(getResources(),R.drawable.cardg);
-         bitmap8 = BitmapFactory.decodeResource(getResources(),R.drawable.cardh);
-         bitmap9 = BitmapFactory.decodeResource(getResources(),R.drawable.cardi);
-         bitmap10 = BitmapFactory.decodeResource(getResources(),R.drawable.cardj);
-         bitmap11 = BitmapFactory.decodeResource(getResources(),R.drawable.cardk);
-         bitmap12 = BitmapFactory.decodeResource(getResources(),R.drawable.cardl);
-         bitmap13 = BitmapFactory.decodeResource(getResources(),R.drawable.cardm);
-         bitmap14 = BitmapFactory.decodeResource(getResources(),R.drawable.cardn);
-      //   bitmap15 = BitmapFactory.decodeResource(getResources(),R.drawable.cardo);
-       //  bitmap16 = BitmapFactory.decodeResource(getResources(),R.drawable.cardp);
-       //  bitmap17 = BitmapFactory.decodeResource(getResources(),R.drawable.cardq);
-       //  bitmap18 = BitmapFactory.decodeResource(getResources(),R.drawable.cardr);
-       //  bitmap19 = BitmapFactory.decodeResource(getResources(),R.drawable.cards);
-       // bitmap20 = BitmapFactory.decodeResource(getResources(),R.drawable.cardt);
-        /* bitmap21 = BitmapFactory.decodeResource(getResources(),R.drawable.cardu);
-         bitmap22 = BitmapFactory.decodeResource(getResources(),R.drawable.cardv);
-         bitmap23 = BitmapFactory.decodeResource(getResources(),R.drawable.cardw);
-         bitmap24 = BitmapFactory.decodeResource(getResources(),R.drawable.cardx);
-         bitmap25 = BitmapFactory.decodeResource(getResources(),R.drawable.cardy);
-         bitmap26 = BitmapFactory.decodeResource(getResources(),R.drawable.cardz);
-         bitmap27 = BitmapFactory.decodeResource(getResources(),R.drawable.cardaa);
-         bitmap28 = BitmapFactory.decodeResource(getResources(),R.drawable.cardbb);
-         bitmap29 = BitmapFactory.decodeResource(getResources(),R.drawable.cardcc);
-         bitmap30 = BitmapFactory.decodeResource(getResources(),R.drawable.carddd);
-         bitmap31 = BitmapFactory.decodeResource(getResources(),R.drawable.cardee);
-         bitmap32 = BitmapFactory.decodeResource(getResources(),R.drawable.cardff);
-         bitmap33 = BitmapFactory.decodeResource(getResources(),R.drawable.cardgg);
-         bitmap34 = BitmapFactory.decodeResource(getResources(),R.drawable.cardhh);
-         bitmap35 = BitmapFactory.decodeResource(getResources(),R.drawable.cardii);
-         bitmap36 = BitmapFactory.decodeResource(getResources(),R.drawable.cardjj);
-         bitmap37 = BitmapFactory.decodeResource(getResources(),R.drawable.cardkk);
-         bitmap38 = BitmapFactory.decodeResource(getResources(),R.drawable.cardll);
-         bitmap39 = BitmapFactory.decodeResource(getResources(),R.drawable.cardmm);
-         bitmap40 = BitmapFactory.decodeResource(getResources(),R.drawable.cardnn);
-         bitmap41 = BitmapFactory.decodeResource(getResources(),R.drawable.cardoo);
-         bitmap42 = BitmapFactory.decodeResource(getResources(),R.drawable.cardpp);
-         bitmap43 = BitmapFactory.decodeResource(getResources(),R.drawable.cardqq);
-         bitmap44 = BitmapFactory.decodeResource(getResources(),R.drawable.cardrr);
-         bitmap45 = BitmapFactory.decodeResource(getResources(),R.drawable.cardss);
-         bitmap46 = BitmapFactory.decodeResource(getResources(),R.drawable.cardtt);
-         bitmap47 = BitmapFactory.decodeResource(getResources(),R.drawable.carduu);
-         bitmap48 = BitmapFactory.decodeResource(getResources(),R.drawable.cardvv);
-         bitmap49 = BitmapFactory.decodeResource(getResources(),R.drawable.cardww);
-         bitmap50 = BitmapFactory.decodeResource(getResources(),R.drawable.cardxx);
-        bitmap51 = BitmapFactory.decodeResource(getResources(),R.drawable.cardyy);
-         bitmap52 = BitmapFactory.decodeResource(getResources(),R.drawable.cardzz);*/
-        // bitmap53 = BitmapFactory.decodeResource(getResources(),R.drawable.bug);
+        //sets each image to a bitmap
+        Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(),R.drawable.card_1c);//assign your bitmap;
+        Bitmap bitmap2 = BitmapFactory.decodeResource(getResources(),R.drawable.card_1d);
+        Bitmap bitmap3 = BitmapFactory.decodeResource(getResources(),R.drawable.card_1h);
+        Bitmap bitmap4 = BitmapFactory.decodeResource(getResources(),R.drawable.card_1s);
+        Bitmap bitmap5 = BitmapFactory.decodeResource(getResources(),R.drawable.card_2c);
+        Bitmap bitmap6 = BitmapFactory.decodeResource(getResources(),R.drawable.card_2d);
+        Bitmap bitmap7 = BitmapFactory.decodeResource(getResources(),R.drawable.card_2h);
+        Bitmap bitmap8 = BitmapFactory.decodeResource(getResources(),R.drawable.card_2s);
+        Bitmap bitmap9 = BitmapFactory.decodeResource(getResources(),R.drawable.card_3c);
+        Bitmap bitmap10 = BitmapFactory.decodeResource(getResources(),R.drawable.card_3d);
+        Bitmap bitmap11 = BitmapFactory.decodeResource(getResources(),R.drawable.card_3h);
+        Bitmap bitmap12 = BitmapFactory.decodeResource(getResources(),R.drawable.card_3s);
+        Bitmap bitmap13 = BitmapFactory.decodeResource(getResources(),R.drawable.card_4c);
+        Bitmap bitmap14 = BitmapFactory.decodeResource(getResources(),R.drawable.card_4d);
+        Bitmap bitmap15 = BitmapFactory.decodeResource(getResources(),R.drawable.card_4h);
+        Bitmap bitmap16 = BitmapFactory.decodeResource(getResources(),R.drawable.card_4s);
+        Bitmap bitmap17 = BitmapFactory.decodeResource(getResources(),R.drawable.card_5c);
+        Bitmap bitmap18 = BitmapFactory.decodeResource(getResources(),R.drawable.card_5d);
+        Bitmap bitmap19 = BitmapFactory.decodeResource(getResources(),R.drawable.card_5h);
+        Bitmap bitmap20 = BitmapFactory.decodeResource(getResources(),R.drawable.card_5s);
+        Bitmap bitmap21 = BitmapFactory.decodeResource(getResources(),R.drawable.card_6c);
+        Bitmap bitmap22 = BitmapFactory.decodeResource(getResources(),R.drawable.card_6d);
+        Bitmap bitmap23 = BitmapFactory.decodeResource(getResources(),R.drawable.card_6h);
+        Bitmap bitmap24 = BitmapFactory.decodeResource(getResources(),R.drawable.card_6s);
+        Bitmap bitmap25 = BitmapFactory.decodeResource(getResources(),R.drawable.card_7c);
+        Bitmap bitmap26 = BitmapFactory.decodeResource(getResources(),R.drawable.card_7d);
+        Bitmap bitmap27 = BitmapFactory.decodeResource(getResources(),R.drawable.card_7h);
+        Bitmap bitmap28 = BitmapFactory.decodeResource(getResources(),R.drawable.card_7s);
+        Bitmap bitmap29 = BitmapFactory.decodeResource(getResources(),R.drawable.card_8c);
+        Bitmap bitmap30 = BitmapFactory.decodeResource(getResources(),R.drawable.card_8d);
+        Bitmap bitmap31 = BitmapFactory.decodeResource(getResources(),R.drawable.card_8h);
+        Bitmap bitmap32 = BitmapFactory.decodeResource(getResources(),R.drawable.card_8s);
+        Bitmap bitmap33 = BitmapFactory.decodeResource(getResources(),R.drawable.card_9c);
+        Bitmap bitmap34 = BitmapFactory.decodeResource(getResources(),R.drawable.card_9d);
+        Bitmap bitmap35 = BitmapFactory.decodeResource(getResources(),R.drawable.card_9h);
+        Bitmap bitmap36 = BitmapFactory.decodeResource(getResources(),R.drawable.card_9s);
+        Bitmap bitmap37 = BitmapFactory.decodeResource(getResources(),R.drawable.card_10c);
+        Bitmap bitmap38 = BitmapFactory.decodeResource(getResources(),R.drawable.card_10d);
+        Bitmap bitmap39 = BitmapFactory.decodeResource(getResources(),R.drawable.card_10h);
+        Bitmap bitmap40 = BitmapFactory.decodeResource(getResources(),R.drawable.card_10s);
+        Bitmap bitmap41 = BitmapFactory.decodeResource(getResources(),R.drawable.card_11c);
+        Bitmap bitmap42 = BitmapFactory.decodeResource(getResources(),R.drawable.card_11d);
+        Bitmap bitmap43 = BitmapFactory.decodeResource(getResources(),R.drawable.card_11h);
+        Bitmap bitmap44 = BitmapFactory.decodeResource(getResources(),R.drawable.card_11s);
+        Bitmap bitmap45 = BitmapFactory.decodeResource(getResources(),R.drawable.card_12c);
+        Bitmap bitmap46 = BitmapFactory.decodeResource(getResources(),R.drawable.card_12d);
+        Bitmap bitmap47 = BitmapFactory.decodeResource(getResources(),R.drawable.card_12h);
+        Bitmap bitmap48 = BitmapFactory.decodeResource(getResources(),R.drawable.card_12s);
+        Bitmap bitmap49 = BitmapFactory.decodeResource(getResources(),R.drawable.card_13c);
+        Bitmap bitmap50 = BitmapFactory.decodeResource(getResources(),R.drawable.card_13d);
+        Bitmap bitmap51 = BitmapFactory.decodeResource(getResources(),R.drawable.card_13h);
+        Bitmap bitmap52 = BitmapFactory.decodeResource(getResources(),R.drawable.card_13s);
+        Bitmap bitmap53 = BitmapFactory.decodeResource(getResources(),R.drawable.cardback);;
         ImageButton card1 = (ImageButton) findViewById(R.id.Card1);
        ImageButton card2 = (ImageButton) findViewById(R.id.Card2);
         ImageButton card3 = (ImageButton) findViewById(R.id.Card3);
@@ -200,8 +202,10 @@ public class PlayActivity extends Activity {
         ImageButton card7 = (ImageButton) findViewById(R.id.Card7);
         ImageButton card8 = (ImageButton) findViewById(R.id.Card8);
         ImageButton card9 = (ImageButton) findViewById(R.id.Card9);
-         arrayOfBitmap = new Bitmap[]{bitmap1, bitmap2, bitmap3, bitmap4, bitmap5, bitmap6, bitmap7, bitmap8, bitmap9, bitmap10, bitmap11, bitmap12, bitmap13, bitmap14};//, bitmap15, bitmap16, bitmap17};//, bitmap18, bitmap19, bitmap20, bitmap21, bitmap22, bitmap23, bitmap24, bitmap25, bitmap26, bitmap27, bitmap28, bitmap29, bitmap30, bitmap31, bitmap32, bitmap33, bitmap34, bitmap35, bitmap36, bitmap37, bitmap38, bitmap39, bitmap40, bitmap41, bitmap42, bitmap43, bitmap44, bitmap45, bitmap46, bitmap47, bitmap48, bitmap49, bitmap50, bitmap51, bitmap52};
-        selectedBitmaps= new Bitmap[]{bitmap1, bitmap2, bitmap3, bitmap4, bitmap5, bitmap6, bitmap7, bitmap8, bitmap9, bitmap10};
+        //adds each image into array
+         arrayOfBitmap = new Bitmap[]{bitmap1, bitmap2, bitmap3, bitmap4, bitmap5, bitmap6, bitmap7, bitmap8, bitmap9, bitmap10, bitmap11, bitmap12, bitmap13, bitmap14, bitmap15, bitmap16, bitmap17, bitmap18, bitmap19, bitmap20, bitmap21, bitmap22, bitmap23, bitmap24, bitmap25, bitmap26, bitmap27, bitmap28, bitmap29, bitmap30, bitmap31, bitmap32, bitmap33, bitmap34, bitmap35, bitmap36, bitmap37, bitmap38, bitmap39, bitmap40, bitmap41, bitmap42, bitmap43, bitmap44, bitmap45, bitmap46, bitmap47, bitmap48, bitmap49, bitmap50, bitmap51, bitmap52};
+        //how many bitmaps to use
+         selectedBitmaps= new Bitmap[]{bitmap1, bitmap2, bitmap3, bitmap4, bitmap5, bitmap6, bitmap7, bitmap8, bitmap9, bitmap10};
         cards = new ImageButton[]{card1,card2,card3,card4,card5,card6,card7,card8,card9};
 
         paint = new Paint();
@@ -213,6 +217,7 @@ public class PlayActivity extends Activity {
         matchedText=(TextView)findViewById(R.id.matchText);
         matchedText.setVisibility(View.INVISIBLE);
         setRandCards();
+        //handles the timer
         new CountDownTimer(21000, 1000) {
             public void onFinish( ) {
 
@@ -224,6 +229,7 @@ public class PlayActivity extends Activity {
                     timeRemaining--;
                     timeText.setText(Integer.toString(timeRemaining));
                 }
+
             }
         }.start();
 
@@ -231,6 +237,7 @@ public class PlayActivity extends Activity {
     }
 
     int Score=0;
+    //checks if the cards flipped over match
     private void checkMatch(ImageButton checkCard){
         Bitmap bitmap113 = ((BitmapDrawable)checkCard.getDrawable()).getBitmap();
         Bitmap bitmap111 = ((BitmapDrawable)currCard.getDrawable()).getBitmap();
@@ -257,7 +264,7 @@ public class PlayActivity extends Activity {
         }
 
     }
-
+// reveals the cards for a few seconds
 private void butClickHelper(final int i){
     if(clickedCards==0)
     {
@@ -287,6 +294,8 @@ private void butClickHelper(final int i){
 
     int clickedCards=0;
     ImageButton currCard;
+
+    //initiates clickhelper
    public void ButtonOnClick(View v) {
        switch (v.getId()) {
            case R.id.Card1:

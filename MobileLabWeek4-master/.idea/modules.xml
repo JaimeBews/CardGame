@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MobileLabWeek4-master.iml" filepath="$PROJECT_DIR$/MobileLabWeek4-master.iml" />
+      <module fileurl="file://C:\Users\Mac\Documents\GitHub\CardGame\MobileLabWeek4-master\MobileLabWeek4-master.iml" filepath="C:\Users\Mac\Documents\GitHub\CardGame\MobileLabWeek4-master\MobileLabWeek4-master.iml" />
       <module fileurl="file://C:\Users\user\Documents\GitHub\CardGame\MobileLabWeek4-master\.idea\modules\MobileLabWeek4-master.iml" filepath="C:\Users\user\Documents\GitHub\CardGame\MobileLabWeek4-master\.idea\modules\MobileLabWeek4-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Mac\Documents\GitHub\CardGame\MobileLabWeek4-master\app\app.iml" filepath="C:\Users\Mac\Documents\GitHub\CardGame\MobileLabWeek4-master\app\app.iml" />
     </modules>
   </component>
 </project>
