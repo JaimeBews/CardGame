@@ -1,3 +1,7 @@
+//Card Game
+// MacDonald Maunder and James Bews
+// March 18 2018
+
 package ca.georgebrown.game2011.mymathgame;
 
 import android.app.Activity;
